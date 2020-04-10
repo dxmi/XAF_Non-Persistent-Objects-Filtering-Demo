@@ -24,7 +24,9 @@ namespace NonPersistentObjectsDemo.Module.Controllers {
         private void Action_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e) {
             var objectSpace = Application.CreateObjectSpace(typeof(FindArticlesDialog));
             var obj = new FindArticlesDialog();
-            e.View = Application.CreateDetailView(objectSpace, obj);
+            var detailView = Application.CreateDetailView(objectSpace, obj);
+            detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
+            e.View = detailView;
         }
         private void Action_Execute(object sender, PopupWindowShowActionExecuteEventArgs e) {
         }
@@ -33,6 +35,7 @@ namespace NonPersistentObjectsDemo.Module.Controllers {
     [DomainComponent]
     public class FindArticlesDialog : NonPersistentObjectBase {
         private Contact _Author;
+        [ImmediatePostData]
         public Contact Author {
             get { return _Author; }
             set { SetPropertyValue<Contact>(nameof(Author), ref _Author, value); }
@@ -62,6 +65,7 @@ namespace NonPersistentObjectsDemo.Module.Controllers {
                 }
                 _Articles.RaiseListChangedEvents = true;
                 _Articles.ResetBindings();
+                OnPropertyChanged(nameof(Articles));
             }
         }
         private CriteriaOperator GetCriteria() {

@@ -10,8 +10,7 @@ using DevExpress.Persistent.Base;
 
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
-    [VisibleInReports]
-    [NavigationItem("Newsflash")]
+    [DefaultClassOptions]
     [DefaultProperty(nameof(Title))]
     [DevExpress.ExpressApp.ConditionalAppearance.Appearance("", Enabled = false, TargetItems = "*")]
     [DevExpress.ExpressApp.DC.DomainComponent]
