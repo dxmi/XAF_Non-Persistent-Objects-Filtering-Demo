@@ -10,7 +10,6 @@ using DevExpress.Persistent.Base;
 
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
-
     public abstract class NonPersistentObjectBase : INotifyPropertyChanged, IObjectSpaceLink {
         private IObjectSpace objectSpace;
         public IObjectSpace ObjectSpace {

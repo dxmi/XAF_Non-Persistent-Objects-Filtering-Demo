@@ -130,7 +130,7 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\Article.cs" />
     <Compile Include="BusinessObjects\Contact.cs" />
-    <Compile Include="BusinessObjects\NonPersistentObjects.cs" />
+    <Compile Include="BusinessObjects\NonPersistentObjectBase.cs" />
     <Compile Include="Controllers\FindArticlesController.cs">
       <SubType>Component</SubType>
     </Compile>
