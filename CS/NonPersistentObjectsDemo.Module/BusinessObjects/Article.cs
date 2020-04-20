@@ -52,14 +52,14 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
         private void ObjectSpace_ObjectsGetting(object sender, ObjectsGettingEventArgs e) {
             if(e.ObjectType == typeof(Article)) {
                 var collection = new DynamicCollection(objectSpace, e.ObjectType, e.Criteria, e.Sorting, e.InTransaction);
-                collection.ObjectsGetting += DynamicCollection_ObjectsGetting;
+                collection.ObjectsFetching += DynamicCollection_ObjectsFetching;
                 e.Objects = collection;
             }
         }
-        private void DynamicCollection_ObjectsGetting(object sender, DynamicObjectsGettingEventArgs e) {
+        private void DynamicCollection_ObjectsFetching(object sender, DynamicObjectsFetchingEventArgs e) {
             if(e.ObjectType == typeof(Article)) {
                 e.Objects = articles;
-                e.ShapeRawData = true;
+                e.ShapeData = true;
             }
         }
 
