@@ -11,7 +11,7 @@ using DevExpress.Persistent.Base;
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
     [DefaultClassOptions]
-    [DefaultProperty(nameof(Title))]
+    [DefaultProperty(nameof(Article.Title))]
     [DevExpress.ExpressApp.ConditionalAppearance.Appearance("", Enabled = false, TargetItems = "*")]
     [DevExpress.ExpressApp.DC.DomainComponent]
     public class Article : NonPersistentObjectBase {

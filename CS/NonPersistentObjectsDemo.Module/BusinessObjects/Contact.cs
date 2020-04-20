@@ -13,7 +13,7 @@ using DevExpress.Xpo;
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
     [DefaultClassOptions]
-    [DefaultProperty(nameof(FullName))]
+    [DefaultProperty(nameof(Contact.FullName))]
     [DevExpress.ExpressApp.ConditionalAppearance.Appearance("", Enabled = false, TargetItems = "*")]
     [DevExpress.ExpressApp.DC.DomainComponent]
     public class Contact : NonPersistentObjectBase {
