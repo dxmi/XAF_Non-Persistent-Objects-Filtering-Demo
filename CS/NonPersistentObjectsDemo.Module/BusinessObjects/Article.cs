@@ -52,11 +52,11 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
         private void ObjectSpace_ObjectsGetting(object sender, ObjectsGettingEventArgs e) {
             if(e.ObjectType == typeof(Article)) {
                 var collection = new DynamicCollection(objectSpace, e.ObjectType, e.Criteria, e.Sorting, e.InTransaction);
-                collection.ObjectsFetching += DynamicCollection_ObjectsFetching;
+                collection.FetchObjects += DynamicCollection_FetchObjects;
                 e.Objects = collection;
             }
         }
-        private void DynamicCollection_ObjectsFetching(object sender, DynamicObjectsFetchingEventArgs e) {
+        private void DynamicCollection_FetchObjects(object sender, FetchObjectsEventArgs e) {
             if(e.ObjectType == typeof(Article)) {
                 e.Objects = articles;
                 e.ShapeData = true;

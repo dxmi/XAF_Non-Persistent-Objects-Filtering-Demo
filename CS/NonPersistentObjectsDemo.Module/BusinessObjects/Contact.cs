@@ -51,11 +51,11 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
         private void ObjectSpace_ObjectsGetting(object sender, ObjectsGettingEventArgs e) {
             if(e.ObjectType == typeof(Contact)) {
                 var collection = new DynamicCollection(objectSpace, e.ObjectType, e.Criteria, e.Sorting, e.InTransaction);
-                collection.ObjectsFetching += DynamicCollection_ObjectsFetching;
+                collection.FetchObjects += DynamicCollection_FetchObjects;
                 e.Objects = collection;
             }
         }
-        private void DynamicCollection_ObjectsFetching(object sender, DynamicObjectsFetchingEventArgs e) {
+        private void DynamicCollection_FetchObjects(object sender, FetchObjectsEventArgs e) {
             if(e.ObjectType == typeof(Contact)) {
                 var rows = contactsStorage.GetContactRows(e.Criteria, e.Sorting);
                 e.Objects = rows.Select(row => GetContact(row));
