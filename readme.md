@@ -10,13 +10,13 @@
 
 ## Scenario
 
-When a [Non\-Persistent Object](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects) colletion contains a lot of objects, it is often useful to filter it. However, the built-in filtering facilities are disabled for non-persistent collections by default.
+When a [Non\-Persistent Object](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects) collection contains many objects, it is often useful to filter it. However, the built-in filtering facilities are disabled for non-persistent collections by default.
 
 ## Solution
 
 To enable filtering and sorting for [Non\-Persistent Objects](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects), use the built-in **DynamicCollection** class or a custom **DynamicCollectionBase** descendant.
 
-Here, we create a **DynamicCollection** instance and pass it in the [NonPersistentObjectSpace\.ObjectsGetting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.NonPersistentObjectSpace.ObjectsGetting) event handler. We subscribe to the **DynamicCollection.ObjectsFetching** event and pass a new collection of non-persistent objects every time filtering or sorting parameters are changed. If you cannot filter the collection manually, set the **ShapeData** event parameter to *true*. Then, **DynamicCollection** will process data (filter, sort, trim) internally.
+Here, we create a **DynamicCollection** instance and pass it in the [NonPersistentObjectSpace\.ObjectsGetting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.NonPersistentObjectSpace.ObjectsGetting) event handler. We subscribe to the **DynamicCollection.ObjectsFetching** event and pass a new collection of non-persistent objects every time the filtering or sorting parameters are changed. If you cannot filter the collection manually, set the **ShapeData** event parameter to *true*. Then, **DynamicCollection** will process data (filter, sort, trim) internally.
 
 This example demonstrates two approaches to filter objects.
 
@@ -26,7 +26,7 @@ This example demonstrates two approaches to filter objects.
 
 When **DynamicCollection** is used, the built-in [FullTextSearch Action](https://docs.devexpress.com/eXpressAppFramework/112997/concepts/filtering/full-text-search-action) is shown in corresponding non-persistent list views.
 
-*FindArticlesController* in this example shows a custom search form with a lookup editor that allows filtering non-perssitent objects in a lookup list view.
+*FindArticlesController* in this example shows a custom search form with a lookup editor that allows filtering non-persistent objects in a lookup list view.
 
 Filtering and sorting at the data source level is also supported in Reports. Use the [Criteria](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.DataSourceBase.Criteria) and [Sorting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.DataSourceBase.Sorting) properties of [CollectionDataSource](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.CollectionDataSource) to specify filter criteria and sorting parameters.
 
