@@ -16,13 +16,13 @@ When a [Non\-Persistent Object](https://docs.devexpress.com/eXpressAppFramework/
 
 To enable filtering and sorting for [Non\-Persistent Objects](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects), use the built-in **DynamicCollection** class or a custom **DynamicCollectionBase** descendant.
 
-Here, we create a **DynamicCollection** instance and pass it in the [NonPersistentObjectSpace\.ObjectsGetting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.NonPersistentObjectSpace.ObjectsGetting) event handler. We subscribe to the **DynamicCollection.ObjectsFetching** event and pass a new collection of non-persistent objects every time the filtering or sorting parameters are changed. If you cannot filter the collection manually, set the **ShapeData** event parameter to *true*. Then, **DynamicCollection** will process data (filter, sort, trim) internally.
+Here, we create a **DynamicCollection** instance and pass it in the [NonPersistentObjectSpace\.ObjectsGetting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.NonPersistentObjectSpace.ObjectsGetting) event handler. We subscribe to the **DynamicCollection.FetchObjects** event and pass a new collection of non-persistent objects every time the filtering or sorting parameters are changed. If you cannot filter the collection manually, set the **ShapeData** event parameter to *true*. Then, **DynamicCollection** will process data (filter, sort, trim) internally.
 
 This example demonstrates two approaches to filter objects.
 
 - *Contact* objects are filtered at the storage level. Criteria and Sorting values passed in event parameters are converted into a storage-specific format and used in arguments of the *DataTable.Select* method call. DataSet returns filtered and sorted data that is then transformed into non-persistent objects. This approach can be useful if data for non-persistent objects is obtained from a remote service, a custom database query or a stored procedure.
 
-- *Article* objects are filtered and sorted by DynamicCollection internally. This functionality is enabled when the **ShapeData** parameter of the **DynamicCollection.ObjectsFetching** event is set to *true*. This approach is useful when all data is already available and no custom processing is required.
+- *Article* objects are filtered and sorted by DynamicCollection internally. This functionality is enabled when the **ShapeData** parameter of the **DynamicCollection.FetchObjects** event is set to *true*. This approach is useful when all data is already available and no custom processing is required.
 
 When **DynamicCollection** is used, the built-in [FullTextSearch Action](https://docs.devexpress.com/eXpressAppFramework/112997/concepts/filtering/full-text-search-action) is shown in corresponding non-persistent list views.
 
