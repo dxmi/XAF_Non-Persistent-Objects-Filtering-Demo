@@ -10,8 +10,9 @@ Imports DevExpress.Persistent.Base
 
 Namespace NonPersistentObjectsDemo.Module.BusinessObjects
 
-	Public MustInherit Class NonPersistentObjectBase
-		Implements INotifyPropertyChanged, IObjectSpaceLink
+	Public MustInherit Class BoundNonPersistentObjectBase
+		Inherits NonPersistentObjectBase
+		Implements IObjectSpaceLink
 
 'INSTANT VB NOTE: The field objectSpace was renamed since Visual Basic does not allow fields to have the same name as other class members:
 		Private objectSpace_Conflict As IObjectSpace
@@ -39,6 +40,11 @@ Namespace NonPersistentObjectsDemo.Module.BusinessObjects
 		Protected Function FindPersistentObjectSpace(ByVal type As Type) As IObjectSpace
 			Return DirectCast(ObjectSpace, NonPersistentObjectSpace).AdditionalObjectSpaces.FirstOrDefault(Function(os) os.IsKnownType(type))
 		End Function
+	End Class
+
+	Public MustInherit Class NonPersistentObjectBase
+		Implements INotifyPropertyChanged
+
 		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 		Protected Sub OnPropertyChanged(ByVal propertyName As String)
 			PropertyChangedEvent?.Invoke(Me, New PropertyChangedEventArgs(propertyName))

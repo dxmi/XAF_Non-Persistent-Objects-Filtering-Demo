@@ -36,7 +36,7 @@ Namespace NonPersistentObjectsDemo.Module.Controllers
 
 	<DomainComponent>
 	Public Class FindArticlesDialog
-		Inherits NonPersistentObjectBase
+		Inherits BoundNonPersistentObjectBase
 
 		Private _Author As Contact
 		<ImmediatePostData>
