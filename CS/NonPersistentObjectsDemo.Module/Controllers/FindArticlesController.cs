@@ -33,7 +33,7 @@ namespace NonPersistentObjectsDemo.Module.Controllers {
     }
 
     [DomainComponent]
-    public class FindArticlesDialog : NonPersistentObjectBase {
+    public class FindArticlesDialog : BoundNonPersistentObjectBase {
         private Contact _Author;
         [ImmediatePostData]
         public Contact Author {

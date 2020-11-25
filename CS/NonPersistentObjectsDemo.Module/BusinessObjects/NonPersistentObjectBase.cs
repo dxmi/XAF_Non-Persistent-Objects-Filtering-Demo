@@ -10,7 +10,7 @@ using DevExpress.Persistent.Base;
 
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
-    public abstract class NonPersistentObjectBase : INotifyPropertyChanged, IObjectSpaceLink {
+    public abstract class BoundNonPersistentObjectBase : NonPersistentObjectBase, IObjectSpaceLink {
         private IObjectSpace objectSpace;
         protected IObjectSpace ObjectSpace { get { return objectSpace; } }
         IObjectSpace IObjectSpaceLink.ObjectSpace {
@@ -28,6 +28,9 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
         protected IObjectSpace FindPersistentObjectSpace(Type type) {
             return ((NonPersistentObjectSpace)ObjectSpace).AdditionalObjectSpaces.FirstOrDefault(os => os.IsKnownType(type));
         }
+    }
+
+    public abstract class NonPersistentObjectBase : INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
