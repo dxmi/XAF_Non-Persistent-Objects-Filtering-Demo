@@ -14,21 +14,20 @@ Namespace NonPersistentObjectsDemo.Module.BusinessObjects
 		Inherits NonPersistentObjectBase
 		Implements IObjectSpaceLink
 
-'INSTANT VB NOTE: The field objectSpace was renamed since Visual Basic does not allow fields to have the same name as other class members:
-		Private objectSpace_Conflict As IObjectSpace
+		Private _ObjectSpace As IObjectSpace
 		Protected ReadOnly Property ObjectSpace() As IObjectSpace
 			Get
-				Return objectSpace_Conflict
+				Return _ObjectSpace
 			End Get
 		End Property
 		Private Property IObjectSpaceLink_ObjectSpace() As IObjectSpace Implements IObjectSpaceLink.ObjectSpace
 			Get
-				Return objectSpace_Conflict
+				Return _ObjectSpace
 			End Get
 			Set(ByVal value As IObjectSpace)
-				If objectSpace_Conflict IsNot value Then
+				If _ObjectSpace IsNot value Then
 					OnObjectSpaceChanging()
-					objectSpace_Conflict = value
+					_ObjectSpace = value
 					OnObjectSpaceChanged()
 				End If
 			End Set

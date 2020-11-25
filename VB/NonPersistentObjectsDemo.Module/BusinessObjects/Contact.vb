@@ -21,25 +21,23 @@ Namespace NonPersistentObjectsDemo.Module.BusinessObjects
 
 		Friend Sub New()
 		End Sub
-'INSTANT VB NOTE: The field userName was renamed since Visual Basic does not allow fields to have the same name as other class members:
-		Private userName_Conflict As String
+		Private _UserName As String
 		<DevExpress.ExpressApp.Data.Key>
 		Public Property UserName() As String
 			Get
-				Return userName_Conflict
+				Return _UserName
 			End Get
 			Set(ByVal value As String)
-				userName_Conflict = value
+				_UserName = value
 			End Set
 		End Property
-'INSTANT VB NOTE: The field fullName was renamed since Visual Basic does not allow fields to have the same name as other class members:
-		Private fullName_Conflict As String
+		Private _FullName As String
 		Public Property FullName() As String
 			Get
-				Return fullName_Conflict
+				Return _FullName
 			End Get
 			Set(ByVal value As String)
-				SetPropertyValue(NameOf(FullName), fullName_Conflict, value)
+				SetPropertyValue(NameOf(FullName), _FullName, value)
 			End Set
 		End Property
 		Private _Age As Integer

@@ -19,16 +19,15 @@ Namespace NonPersistentObjectsDemo.Module.BusinessObjects
 
 		Friend Sub New()
 		End Sub
-'INSTANT VB NOTE: The field id was renamed since Visual Basic does not allow fields to have the same name as other class members:
-		Private id_Conflict As Integer
+		Private _ID As Integer
 		<Browsable(False)>
 		<DevExpress.ExpressApp.Data.Key>
 		Public Property ID() As Integer
 			Get
-				Return id_Conflict
+				Return _ID
 			End Get
 			Set(ByVal value As Integer)
-				id_Conflict = value
+				_ID = value
 			End Set
 		End Property
 		Private _Author As Contact
