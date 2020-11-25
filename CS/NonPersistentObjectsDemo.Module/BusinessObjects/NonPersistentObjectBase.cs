@@ -11,14 +11,14 @@ using DevExpress.Persistent.Base;
 namespace NonPersistentObjectsDemo.Module.BusinessObjects {
 
     public abstract class BoundNonPersistentObjectBase : NonPersistentObjectBase, IObjectSpaceLink {
-        private IObjectSpace objectSpace;
-        protected IObjectSpace ObjectSpace { get { return objectSpace; } }
+        private IObjectSpace _ObjectSpace;
+        protected IObjectSpace ObjectSpace { get { return _ObjectSpace; } }
         IObjectSpace IObjectSpaceLink.ObjectSpace {
-            get { return objectSpace; }
+            get { return _ObjectSpace; }
             set {
-                if(objectSpace != value) {
+                if(_ObjectSpace != value) {
                     OnObjectSpaceChanging();
-                    objectSpace = value;
+                    _ObjectSpace = value;
                     OnObjectSpaceChanged();
                 }
             }

@@ -18,16 +18,16 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
     [DevExpress.ExpressApp.DC.DomainComponent]
     public class Contact : NonPersistentObjectBase {
         internal Contact() { }
-        private string userName;
+        private string _UserName;
         [DevExpress.ExpressApp.Data.Key]
         public string UserName {
-            get { return userName; }
-            set { userName = value; }
+            get { return _UserName; }
+            set { _UserName = value; }
         }
-        private string fullName;
+        private string _FullName;
         public string FullName {
-            get { return fullName; }
-            set { SetPropertyValue(nameof(FullName), ref fullName, value); }
+            get { return _FullName; }
+            set { SetPropertyValue(nameof(FullName), ref _FullName, value); }
         }
         private int _Age;
         public int Age {

@@ -16,12 +16,12 @@ namespace NonPersistentObjectsDemo.Module.BusinessObjects {
     [DevExpress.ExpressApp.DC.DomainComponent]
     public class Article : NonPersistentObjectBase {
         internal Article() { }
-        private int id;
+        private int _ID;
         [Browsable(false)]
         [DevExpress.ExpressApp.Data.Key]
         public int ID {
-            get { return id; }
-            set { id = value; }
+            get { return _ID; }
+            set { _ID = value; }
         }
         private Contact _Author;
         public Contact Author {
