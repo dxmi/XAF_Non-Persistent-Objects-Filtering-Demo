@@ -5,10 +5,10 @@
 <!-- default badges end -->
 *Files to look at*:
 
-* [Contact.cs](./CS/NonPersistentObjectsDemo.Module/BusinessObjects/Contact.cs)
-* [Article.cs](./CS/NonPersistentObjectsDemo.Module/BusinessObjects/Article.cs)
-* [NonPersistentObjectBase.cs](./CS/NonPersistentObjectsDemo.Module/BusinessObjects/NonPersistentObjectBase.cs)
-* [Module.cs](./CS/NonPersistentObjectsDemo.Module/Module.cs)
+* [Contact.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Contact.cs)
+* [Article.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Article.cs )
+* [NonPersistentObjectBase.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/NonPersistentObjectBase.cs )
+* [Module.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/Module.cs )
 
 
 # How to filter and sort Non-Persistent Objects
