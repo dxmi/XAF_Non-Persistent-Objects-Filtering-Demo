@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonPersistentFilteringEF.Blazor.Server", "NonPersistentFilteringEF.Blazor.Server\NonPersistentFilteringEF.Blazor.Server.csproj", "{1EA5939B-0396-43BB-B9C8-4516F3EF00F9}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonPersistentFilteringEF.Module", "NonPersistentFilteringEF.Module\NonPersistentFilteringEF.Module.csproj", "{CFD35739-63A1-4719-91BC-73DC68E37F0A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonPersistentFilteringEF.Win", "NonPersistentFilteringEF.Win\NonPersistentFilteringEF.Win.csproj", "{840F30C1-8D4C-44CD-96BD-4149947B8AF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonPersistentFilteringEF.Blazor.Server", "NonPersistentFilteringEF.Blazor.Server\NonPersistentFilteringEF.Blazor.Server.csproj", "{1EA5939B-0396-43BB-B9C8-4516F3EF00F9}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
