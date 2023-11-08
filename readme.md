@@ -3,21 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T952649)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-*Files to look at*:
-
-* [Contact.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Contact.cs)
-* [Article.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Article.cs )
-* [NonPersistentObjectBase.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/NonPersistentObjectBase.cs )
-* [Module.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/Module.cs )
-
 
 # How to filter and sort Non-Persistent Objects
 
-## Scenario
 
 When a [Non\-Persistent Object](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects) collection contains many objects, it is often useful to filter it. However, the built-in filtering facilities are disabled for non-persistent collections by default.
 
-## Solution
+## Implementation Details
 
 To enable filtering and sorting for [Non\-Persistent Objects](https://docs.devexpress.com/eXpressAppFramework/116516/concepts/business-model-design/non-persistent-objects), use the built-in **DynamicCollection** class or a custom **DynamicCollectionBase** descendant.
 
@@ -33,5 +25,18 @@ When **DynamicCollection** is used, the built-in [FullTextSearch Action](https:/
 
 *FindArticlesController* in this example shows a custom search form with a lookup editor that allows filtering non-persistent objects in a lookup list view.
 
-Filtering and sorting at the data source level is also supported in Reports. Use the [Criteria](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.DataSourceBase.Criteria) and [Sorting](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.DataSourceBase.Sorting) properties of [CollectionDataSource](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ReportsV2.CollectionDataSource) to specify filter criteria and sorting parameters.
 
+## Files to Review
+
+- [Contact.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Contact.cs)
+- [Article.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/Article.cs )
+- [NonPersistentObjectBase.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/BusinessObjects/NonPersistentObjectBase.cs )
+- [Module.cs](./CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/Module.cs )
+- [FindArticlesController.cs](CS/EFCore/NonPersistentFilteringEF/NonPersistentFilteringEF.Module/Controllers/FindArticlesController.cs)
+
+## More Examples
+
+- [DevExpress-Examples/XAF_Non-Persistent-Objects-Editing-Demo: How to implement CRUD operations for Non-Persistent Objects stored remotely in eXpressApp Framework](https://github.com/DevExpress-Examples/XAF_Non-Persistent-Objects-Editing-Demo)
+- [DevExpress-Examples/XAF_Non-Persistent-Objects-Nested-In-Persistent-Objects-Demo: .NET, Frameworks (XAF & XPO), eXpressApp Framework](https://github.com/DevExpress-Examples/XAF_Non-Persistent-Objects-Nested-In-Persistent-Objects-Demo)
+- [DevExpress-Examples/XAF_Non-Persistent-Objects-Reloading-Demo: .NET, Frameworks (XAF & XPO), eXpressApp Framework](https://github.com/DevExpress-Examples/XAF_Non-Persistent-Objects-Reloading-Demo)
+- [DevExpress-Examples/XAF_Non-Persistent-Objects-Filtering-Demo: .NET, Frameworks (XAF & XPO), eXpressApp Framework](https://github.com/DevExpress-Examples/XAF_Non-Persistent-Objects-Filtering-Demo)
